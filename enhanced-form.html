@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Enhanced HTML5 Form</title>
+</head>
+<body>
+  <header>
+    <h1>Enhanced HTML5 Form & Media Showcase</h1>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="#media">Media</a></li>
+        <li><a href="#info">Info</a></li>
+        <li><a href="#form">Form</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Media Section -->
+    <section id="media">
+      <h2>Media Examples</h2>
+      <figure>
+        <img src="https://via.placeholder.com/600x200.png?text=Image" alt="Placeholder image example" width="600" height="200">
+        <figcaption>Example image with accessible alt text</figcaption>
+      </figure>
+
+      <figure>
+        <video controls width="480" height="270">
+          <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <figcaption>HTML5 video with default playback controls</figcaption>
+      </figure>
+
+      <figure>
+        <audio controls>
+          <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+        <figcaption>Audio clip using HTML5 audio element</figcaption>
+      </figure>
+    </section>
+
+    <!-- Info Section with Lists & Table -->
+    <section id="info">
+      <h2>Instruction & Table Example</h2>
+      <h3>To use the form, follow these steps:</h3>
+      <ol>
+        <li>Complete all required fields.</li>
+        <li>Ensure phone number and email formats are valid.</li>
+        <li>Submit the form to test HTML5 validation.</li>
+      </ol>
+
+      <h3>What to expect:</h3>
+      <ul>
+        <li>Contact details (name, email, phone)</li>
+        <li>Appointment date and time</li>
+        <li>Personal preferences and feedback</li>
+      </ul>
+
+      <h3>Available Appointment Slots</h3>
+      <table>
+        <caption>Weekly Appointment Slots</caption>
+        <thead>
+          <tr>
+            <th scope="col">Weekday</th>
+            <th scope="col">Morning</th>
+            <th scope="col">Afternoon</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Monday</th>
+            <td>9:00-11:00 AM</td>
+            <td>1:00-3:00 PM</td>
+          </tr>
+          <tr>
+            <th scope="row">Friday</th>
+            <td>10:00-12:00 PM</td>
+            <td>2:00-4:00 PM</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Form Section -->
+    <section id="form">
+      <h2>Registration & Preferences Form</h2>
+      <form action="#" method="post" autocomplete="on">
+        <!-- Personal Info -->
+        <fieldset>
+          <legend>Contact Information</legend>
+
+          <label for="fullname">Full Name:
+            <input
+              type="text"
+              id="fullname"
+              name="fullname"
+              placeholder="e.g. Jane Doe"
+              required
+              autocomplete="name"
+            >
+          </label><br>
+
+          <label for="email">Email:
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="you@example.com"
+              required
+              autocomplete="email"
+            >
+          </label><br>
+
+          <label for="phone">Phone Number:
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="+254712345678"
+              required
+              autocomplete="tel"
+              pattern="^\+?[0-9]{7,15}$"
+              title="Enter country code + number"
+            >
+          </label>
+        </fieldset>
+
+        <!-- Appointment Preferences -->
+        <fieldset>
+          <legend>Appointment Preferences</legend>
+
+          <label for="appt-date">Appointment Date:
+            <input
+              type="date"
+              id="appt-date"
+              name="appointment_date"
+              required
+            >
+          </label><br>
+
+          <label for="appt-time">Preferred Time:
+            <input
+              type="time"
+              id="appt-time"
+              name="appointment_time"
+              required
+            >
+          </label><br>
+
+          <label for="age">Your Age:
+            <input
+              type="number"
+              id="age"
+              name="age"
+              min="18"
+              max="99"
+              required
+              placeholder="18"
+            >
+          </label>
+        </fieldset>
+
+        <!-- Account Setup -->
+        <fieldset>
+          <legend>Account Setup</legend>
+
+          <label for="website">Website (optional):
+            <input
+              type="url"
+              id="website"
+              name="website"
+              placeholder="https://example.com"
+              autocomplete="url"
+            >
+          </label><br>
+
+          <label for="password">Password:
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Create a password"
+              required
+              minlength="6"
+            >
+          </label><br>
+
+          <label for="confirm_pw">Confirm Password:
+            <input
+              type="password"
+              id="confirm_pw"
+              name="confirm_password"
+              placeholder="Retype password"
+              required
+              minlength="6"
+            >
+          </label><br>
+
+          <label for="referral">Referral Code:
+            <input
+              type="text"
+              id="referral"
+              name="referral"
+              value="REFERRAL2025"
+              readonly
+            >
+          </label>
+        </fieldset>
+
+        <!-- Extras & Feedback -->
+        <fieldset>
+          <legend>Extras & Feedback</legend>
+
+          <label for="color-preference">Favorite Color:
+            <select id="color-preference" name="favorite_color" required>
+              <option value="" disabled selected>Select a color</option>
+              <option value="red">Red</option>
+              <option value="green">Green</option>
+              <option value="blue">Blue</option>
+            </select>
+          </label><br>
+
+          <label>Subscribe to:
+            <input type="checkbox" name="subscribe_news" value="newsletter"> Newsletter
+            <input type="checkbox" name="subscribe_updates" value="updates"> Updates
+          </label><br>
+
+          <span>Preferred Session:</span>
+          <label>
+            <input type="radio" name="session" value="AM" required> Morning
+          </label>
+          <label>
+            <input type="radio" name="session" value="PM"> Afternoon
+          </label><br>
+
+          <label for="comments">Additional Comments:
+            <textarea
+              id="comments"
+              name="comments"
+              placeholder="Enter at least 10 characters"
+              required
+              minlength="10"
+              maxlength="250"
+            ></textarea>
+          </label><br>
+
+          <label for="avatar">Upload Avatar:
+            <input type="file" id="avatar" name="avatar" accept="image/*">
+          </label>
+        </fieldset>
+
+        <p><em>Fields marked * are required.</em></p>
+        <button type="submit">Submit Form</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 All Rights Reserved</p>
+  </footer>
+</body>
+</html>
